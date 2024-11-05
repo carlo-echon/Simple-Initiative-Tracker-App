@@ -19,19 +19,25 @@ class MainMenuScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
+      body: Center(
+        child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           CustomButton(
-            onPressed: () => groupInitiative(context), 
+            onPressed: () => indivInitative(context), 
             text: "Individual Initiative"
           ),
+          SizedBox(
+            width: 5,
+            height: 5,
+          ),
           CustomButton(
-            onPressed: () => indivInitative(context),
+            onPressed: () => groupInitiative(context),
             text: "Group Initiative"
           ),
         ],
       ),
+    )
     );
   }
 }

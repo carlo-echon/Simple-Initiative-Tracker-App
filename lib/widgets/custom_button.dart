@@ -15,7 +15,7 @@ class CustomButton extends StatelessWidget {
         boxShadow: [
           BoxShadow(
             color: Colors.grey,
-            blurRadius: 5,
+            blurRadius: 7,
             spreadRadius: 0
           )
         ]
@@ -23,9 +23,13 @@ class CustomButton extends StatelessWidget {
       child: ElevatedButton(
         onPressed: onPressed,
         style: ElevatedButton.styleFrom(
-          minimumSize: Size(width/3, 50)
+          minimumSize: Size(width/3, 50),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(8), // Adjust this value for less/more rounded corners
+          ),
+          backgroundColor: Color.fromRGBO(238, 217, 179, 1)
         ),
-        child: Text(text, style: const TextStyle(fontSize: 15)),
+        child: Text(text, style: const TextStyle(fontSize: 15, color: Color.fromRGBO(113, 163, 84, 1))),
         ),
     );
   }
