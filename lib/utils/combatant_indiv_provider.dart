@@ -12,6 +12,16 @@ class CombatantProvider with ChangeNotifier {
   // Method to add a new combatant and notify listeners of the change
   void addCombatant(IndivCombatant combatant) {
     _combatants.add(combatant);
+    _combatants.sort((a, b) => b.initiative.compareTo(a.initiative));
+    notifyListeners();
+  }
+
+  void updateHp(int index, int newHp, {bool isDead = false}) {
+    if (index >= 0 && index < _combatants.length) {
+      _combatants[index].hp = newHp;
+      _combatants[index].isDead = isDead;
+
+    }
     notifyListeners();
   }
 }
