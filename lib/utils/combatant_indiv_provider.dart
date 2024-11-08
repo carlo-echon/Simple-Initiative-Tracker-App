@@ -24,4 +24,8 @@ class CombatantProvider with ChangeNotifier {
     }
     notifyListeners();
   }
+
+  void clearAllCombatants() {
+    combatants.clear();
+  }
 }

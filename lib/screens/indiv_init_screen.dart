@@ -4,6 +4,7 @@ import 'package:simple_initiative_tracker_app/screens/add_combatant_indiv_screen
 import 'package:simple_initiative_tracker_app/utils/colors.dart';
 import 'package:simple_initiative_tracker_app/utils/combatant_indiv_provider.dart';
 import 'package:simple_initiative_tracker_app/widgets/custom_dialog_edit_hp.dart';
+import 'package:simple_initiative_tracker_app/widgets/custom_dialog_end_combat.dart';
 
 class IndivInitiativeScreen extends StatefulWidget {
   static String routeName = '/indiv-initiative';
@@ -16,6 +17,7 @@ class IndivInitiativeScreen extends StatefulWidget {
 class _IndivInitiativeScreenState extends State<IndivInitiativeScreen> {
 
    int? _currentTurnIndex;
+   bool _isCombatStarted = false;
 
   void _advanceTurn() {
     final provider = Provider.of<CombatantProvider>(context, listen: false);
@@ -26,6 +28,7 @@ class _IndivInitiativeScreenState extends State<IndivInitiativeScreen> {
         if (_currentTurnIndex == null) {
           // Start at the first alive combatant
           _currentTurnIndex = 0;
+          _isCombatStarted = true;
         } else {
           // Move to the next combatant in the list
           _currentTurnIndex = (_currentTurnIndex! + 1) % combatants.length;
@@ -47,6 +50,22 @@ class _IndivInitiativeScreenState extends State<IndivInitiativeScreen> {
       ),
     );
   }
+
+   void _endCombat(BuildContext context) {
+    showDialog(context: context,
+     builder: (context) => EndCombatDialog(
+      onConfirmEndCombat: () {
+        final provider = Provider.of<CombatantProvider>(context, listen: false);
+        provider.clearAllCombatants();
+
+        setState(() {
+          _currentTurnIndex = null;
+          _isCombatStarted = false;
+        });
+      }
+      ),
+     );
+   }
 
   void addCombatantIndiv(BuildContext context) {
     Navigator.pushNamed(context, AddCombatantIndivScreen.routeName);
@@ -95,24 +114,20 @@ class _IndivInitiativeScreenState extends State<IndivInitiativeScreen> {
         ),
         bottomNavigationBar: Padding(
           padding: const EdgeInsets.all(16.0),
-          child: ElevatedButton(
-            onPressed: _advanceTurn,
-            child: Text(
-              _currentTurnIndex == null ? 'Start Combat' : 'Next Turn',
-            ),
-          )
+          child: Row(
+            children: [
+              ElevatedButton(
+                onPressed: _advanceTurn,
+                child: Text(
+                _currentTurnIndex == null ? 'Start Combat' : 'Next Turn',
+                  ),
+              ),
+              if (_isCombatStarted) 
+                ElevatedButton(onPressed: () => _endCombat(context), child: const Text('End Combat'))
+              
+          ],
+          ),
         ),
-      
-      //ListView.separated(
-          //itemCount: combatants.length,
-          //itemBuilder: (context, index) {
-            //final combatant = combatants[index];
-            //return ListTile(
-            //  title: Text(combatant.name),
-            //  subtitle: Text('Initiative: ${combatant.initiative}'),
-            //);
-          //},
-        //);
       );
   }
 }
