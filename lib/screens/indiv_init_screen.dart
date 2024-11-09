@@ -118,12 +118,45 @@ class _IndivInitiativeScreenState extends State<IndivInitiativeScreen> {
             children: [
               ElevatedButton(
                 onPressed: _advanceTurn,
+                style: ElevatedButton.styleFrom(
+                backgroundColor: const Color.fromRGBO(238, 217, 179, 1),          // Text color
+                shape: const RoundedRectangleBorder(
+                  borderRadius: BorderRadius.zero, // Square edges
+                ),
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 24.0,               // Adjust horizontal padding for width
+                  vertical: 12.0,                 // Adjust vertical padding for height
+                ),
+              ),
                 child: Text(
                 _currentTurnIndex == null ? 'Start Combat' : 'Next Turn',
+                style: const TextStyle(
+                  color: Color.fromRGBO(163, 76, 80, 1),
+                ),
                   ),
               ),
+              const SizedBox(
+                width: 15,
+                height: 5,
+              ),
               if (_isCombatStarted) 
-                ElevatedButton(onPressed: () => _endCombat(context), child: const Text('End Combat'))
+                ElevatedButton(onPressed: () => _endCombat(context),
+                style: ElevatedButton.styleFrom(
+                backgroundColor: const Color.fromRGBO(238, 217, 179, 1),          // Text color
+                shape: const RoundedRectangleBorder(
+                  borderRadius: BorderRadius.zero, // Square edges
+                ),
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 24.0,               // Adjust horizontal padding for width
+                  vertical: 12.0,                 // Adjust vertical padding for height
+                ),
+              ),                 
+                child: const Text('End Combat',
+                style: TextStyle(
+                  color: Color.fromRGBO(163, 76, 80, 1),
+                  )
+                ),
+                )
               
           ],
           ),

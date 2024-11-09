@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:simple_initiative_tracker_app/utils/colors.dart';
 import 'package:simple_initiative_tracker_app/utils/combatant_indiv.dart';
 import 'package:simple_initiative_tracker_app/utils/group_provider.dart';
+import 'package:simple_initiative_tracker_app/widgets/custom_button.dart';
 
 
 class AddCombatantGroupScreen extends StatefulWidget {
@@ -90,9 +91,9 @@ class _AddCombatantGroupScreenState extends State<AddCombatantGroupScreen> {
               decoration: const InputDecoration(labelText: 'AC'),
             ),
             const SizedBox(height: 16.0),
-            ElevatedButton(
+            CustomButton(
               onPressed: _addCombatant,
-              child: const Text('Add Combatant to Group'),
+              text: 'Add Combatant to Group',
             ),
             const SizedBox(height: 16.0),
             Expanded(
@@ -108,9 +109,9 @@ class _AddCombatantGroupScreenState extends State<AddCombatantGroupScreen> {
               ),
             ),
             const SizedBox(height: 16.0),
-            ElevatedButton(
+            CustomButton(
               onPressed: _submitGroup,
-              child: const Text('Save Group'),
+              text: 'Save Group',
             ),
           ],
         ),
