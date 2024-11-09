@@ -29,7 +29,7 @@ class CustomButton extends StatelessWidget {
           ),
           backgroundColor: Color.fromRGBO(238, 217, 179, 1)
         ),
-        child: Text(text, style: const TextStyle(fontSize: 15, color: Color.fromRGBO(113, 163, 84, 1))),
+        child: Text(text, style: const TextStyle(fontSize: 15, color: Color.fromRGBO(163, 76, 80, 1))),
         ),
     );
   }

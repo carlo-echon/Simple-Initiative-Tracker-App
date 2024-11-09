@@ -23,11 +23,23 @@ class MainMenuScreen extends StatelessWidget {
         child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
+          const Text(
+            'Simple Initiative',
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+              fontSize: 40.0,
+              color: Color.fromRGBO(88, 45, 48, 1)
+              ),
+             ),
+          const SizedBox(
+            width: 5,
+            height: 35,
+          ),
           CustomButton(
             onPressed: () => indivInitative(context), 
             text: "Individual Initiative"
           ),
-          SizedBox(
+          const SizedBox(
             width: 5,
             height: 5,
           ),

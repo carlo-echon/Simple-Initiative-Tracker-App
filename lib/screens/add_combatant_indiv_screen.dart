@@ -49,7 +49,7 @@ class _AddCombatantIndivScreenState extends State<AddCombatantIndivScreen> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Add Combatant (Individual)'),
-        backgroundColor: bgColor,
+        backgroundColor: topBarColor,
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),

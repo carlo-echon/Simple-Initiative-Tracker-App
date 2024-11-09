@@ -84,7 +84,7 @@ class _GroupInitiativeScreenState extends State<GroupInitiativeScreen> {
              icon: const Icon(Icons.add)
              ),
         ],
-        backgroundColor: bgColor,
+        backgroundColor: topBarColor,
       ),
       body: Center(
         child: ListView.separated(

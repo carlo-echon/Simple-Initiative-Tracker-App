@@ -86,7 +86,7 @@ class _IndivInitiativeScreenState extends State<IndivInitiativeScreen> {
              icon: const Icon(Icons.add)
              ),
         ],
-        backgroundColor: bgColor,
+        backgroundColor: topBarColor,
       ),
       body: Center(
         child: ListView.separated(

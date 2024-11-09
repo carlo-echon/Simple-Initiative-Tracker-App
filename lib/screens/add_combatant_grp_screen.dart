@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:simple_initiative_tracker_app/utils/colors.dart';
 import 'package:simple_initiative_tracker_app/utils/combatant_indiv.dart';
 import 'package:simple_initiative_tracker_app/utils/group_provider.dart';
 
@@ -62,6 +63,7 @@ class _AddCombatantGroupScreenState extends State<AddCombatantGroupScreen> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Add Combatant Group'),
+        backgroundColor: topBarColor,
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
