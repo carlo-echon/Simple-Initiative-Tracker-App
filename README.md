@@ -4,7 +4,7 @@ A simple app made with Flutter for initiative tracking in tabletop role-playing 
 
 ## How to get it running on your device
 
-Although not on any app store, you can download the app through the APK in these links. Just download the APK for your device. [https://drive.google.com/drive/folders/1CaGOrD0wpbu0eO-B63kiIYTali6q6KRR?usp=sharing]
+Although not on any app store, you can download the app through the APK in these links. Just download the APK for your device. Comment or message if you want access. [https://drive.google.com/drive/folders/1CaGOrD0wpbu0eO-B63kiIYTali6q6KRR?usp=sharing]
 
 ## Features to be implemented (Hopefully)
 
