@@ -5,6 +5,7 @@ import 'package:simple_initiative_tracker_app/utils/combatant_indiv_provider.dar
 import 'package:simple_initiative_tracker_app/utils/combatant_indiv.dart';
 import 'package:simple_initiative_tracker_app/widgets/custom_button.dart';
 import 'package:simple_initiative_tracker_app/widgets/custom_textfield.dart';
+import 'package:simple_initiative_tracker_app/widgets/custom_textfield_num.dart';
 
 
 class AddCombatantIndivScreen extends StatefulWidget {
@@ -59,18 +60,22 @@ class _AddCombatantIndivScreenState extends State<AddCombatantIndivScreen> {
               controller: _nameController,
                hintText: 'Name'
                ),
-            CustomTextField(
+               const SizedBox(height: 10.0),
+            CustomTextFieldNum(
               controller: _initiativeController,
                hintText: 'Initiative'
                ),
-            CustomTextField(
+               const SizedBox(height: 10.0),
+            CustomTextFieldNum(
               controller: _armorController,
                hintText: 'AC'
                ),
-            CustomTextField(
+               const SizedBox(height: 10.0),
+            CustomTextFieldNum(
               controller: _healthController,
                hintText: 'HP'
                ),
+               const SizedBox(height: 25.0),
             CustomButton(
               onPressed: () => _submitCombatant(context),
                text: "Add Combatant"
