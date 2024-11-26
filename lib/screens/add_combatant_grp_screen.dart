@@ -4,6 +4,8 @@ import 'package:simple_initiative_tracker_app/utils/colors.dart';
 import 'package:simple_initiative_tracker_app/utils/combatant_indiv.dart';
 import 'package:simple_initiative_tracker_app/utils/group_provider.dart';
 import 'package:simple_initiative_tracker_app/widgets/custom_button.dart';
+import 'package:simple_initiative_tracker_app/widgets/custom_textfield.dart';
+import 'package:simple_initiative_tracker_app/widgets/custom_textfield_num.dart';
 
 
 class AddCombatantGroupScreen extends StatefulWidget {
@@ -70,25 +72,24 @@ class _AddCombatantGroupScreenState extends State<AddCombatantGroupScreen> {
         padding: const EdgeInsets.all(16.0),
         child: Column(
           children: [
-            TextField(
-              controller: _initiativeController,
-              keyboardType: TextInputType.number,
-              decoration: const InputDecoration(labelText: 'Group Initiative'),
+            CustomTextFieldNum(
+              controller: _initiativeController, 
+              hintText: 'Initiative'
             ),
             const SizedBox(height: 16.0),
-            TextField(
-              controller: _nameController,
-              decoration: const InputDecoration(labelText: 'Combatant Name'),
+            CustomTextField(
+              controller: _nameController, 
+              hintText: 'Name',
             ),
-            TextField(
+            const SizedBox(height: 5.0),
+            CustomTextFieldNum(
               controller: _hpController,
-              keyboardType: TextInputType.number,
-              decoration: const InputDecoration(labelText: 'HP'),
+              hintText: 'HP',
             ),
-            TextField(
+            const SizedBox(height: 5.0),
+            CustomTextFieldNum(
               controller: _acController,
-              keyboardType: TextInputType.number,
-              decoration: const InputDecoration(labelText: 'AC'),
+              hintText: 'AC',
             ),
             const SizedBox(height: 16.0),
             CustomButton(
