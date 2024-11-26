@@ -1,8 +1,12 @@
 # Simple Initiative Tracker
 
-This branch has the goal of revamping the initial app. 
+A simple app made with Flutter for initiative tracking in tabletop role-playing games. It was made with Old-School Essentials (OSE) and D&D 5e in mind. 
 
-The goal of the revamp is to make the code more readable, and to add some features I wanted to add. 
-First change was adding the choice of group or individual initiative. 
-Another feature to be added is the ability to start the combat and have a combat mode. 
-So it is more interactive than just being a glorified notepad. 
+## How to get it running on your device
+
+Although not on any app store, you can download the app through the APK in these links. Just download the APK for your device. 
+
+## Features to be implemented (Hopefully)
+
+- Connection with D&D API using the 2024 ruleset to make use of the free monsters in the basic rules.
+- Having the group initiative be more in line with the rules of OSEs initiative system. 
